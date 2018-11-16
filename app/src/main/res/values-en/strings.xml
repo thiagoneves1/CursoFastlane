@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Fastlane Course</string>
+    <string name="tela_um">Screen one</string>
+    <string name="tela_calcular">Calculation Screen</string>
+    <string name="tela_texto">Text display</string>
+    <string name="tela_final">Last Screen</string>
+    <string name="title_activity_tela_um">ScreenOne</string>
+    <string name="title_activity_calculo">Calculation</string>
+    <string name="title_activity_texto">Text</string>
+    <string name="title_activity_ultima">Last</string>
+    <string name="texto">A sample text</string>
+    <string name="calcular">calculate</string>
+</resources>
+
+

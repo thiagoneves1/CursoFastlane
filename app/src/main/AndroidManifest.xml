@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ActivityTelaUm"
+            android:label="@string/title_activity_tela_um"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivityCalculo"
+            android:label="@string/title_activity_calculo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivityTexto"
+            android:label="@string/title_activity_texto"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivityUltima"
+            android:label="@string/title_activity_ultima"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Cours Fastlane</string>
+    <string name="tela_um">Écran un</string>
+    <string name="tela_calcular">Écran de calcul</string>
+    <string name="tela_texto">Affichage du texte</string>
+    <string name="tela_final">Dernier écran</string>
+    <string name="title_activity_tela_um">ScreenUm</string>
+    <string name="title_activity_calculo">Calcul</string>
+    <string name="title_activity_texto">Texte</string>
+    <string name="title_activity_ultima">Dernier</string>
+    <string name="texto">Un exemple de texte</string>
+    <string name="calcular">calculer</string>
+
+</resources>
+
+
+
+
+
+
+
