@@ -10,4 +10,8 @@
     <string name="title_activity_ultima">Ultima</string>
     <string name="texto">Um texto de exemplo</string>
     <string name="calcular">calcular</string>
+    <string name="par">par</string>
+    <string name="impar">impar</string>
+    <string name="primo">Número Primo</string>
+    <string name="nao_primo">Número não primo</string>
 </resources>

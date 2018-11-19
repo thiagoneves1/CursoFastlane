@@ -12,7 +12,6 @@ public class ActivityTelaUm extends AppCompatActivity {
         setContentView(R.layout.activity_tela_um);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
 }

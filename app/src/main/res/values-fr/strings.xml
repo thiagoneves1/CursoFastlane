@@ -10,6 +10,10 @@
     <string name="title_activity_ultima">Dernier</string>
     <string name="texto">Un exemple de texte</string>
     <string name="calcular">calculer</string>
+    <string name="par">pair</string>
+    <string name="impar">impair</string>
+    <string name="primo">Nombre premier</string>
+    <string name="nao_primo">Nombre non premier</string>
 
 </resources>
 
