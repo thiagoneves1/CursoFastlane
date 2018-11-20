@@ -1,8 +1,30 @@
 default_platform(:android)
 
 platform :android do
-  desc "Rodar todos os testes"
-  lane :test do
-    gradle(task: "test")
-  end
+  	desc "Rodar todos os testes"
+	lane :test do
+		gradle(task: "test")
+	end
+	desc "Build do app e upload Google Play"
+	lane :build do
+		begin
+					gradle(task: "assemble", build_type: "Release")
+		upload_to_play_store(track: "beta",
+			apk: "/Users/thiagotadeuneves/Documents/Cursos/CursoFastlane/app/build/outputs/apk/release/app-release.apk")
+		slack(
+			message: "Aplicativo Atualizado com sucess",
+			channel: "#builds-appx",
+			success: true,
+			slack_url: "https://hooks.slack.com/services/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")
+		rescue Exception => e
+			send_error(e)
+		end
+	end
+end
+def send_error(e)
+	slack(
+		message: "Aplicativo NÃO Atualizado, Exception : #{e}",
+		channel: "#builds-appx",
+		success: false,
+		slack_url: "https://hooks.slack.com/services/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")
 end

@@ -10,8 +10,18 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            keyAlias 'curso_fastlane'
+            keyPassword 'curso123'
+            storeFile file('/Users/thiagotadeuneves/Documents/Cursos/CursoFastlane/cursofastlane.jks')
+            storePassword 'curso123'
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
