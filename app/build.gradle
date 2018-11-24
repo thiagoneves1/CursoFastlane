@@ -6,8 +6,8 @@ android {
         applicationId "br.com.thiagoneves.cursofastlane"
         minSdkVersion 22
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -36,4 +36,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+task('incrementBuildVersion') << {
+    ant.propertyfile(file: "../gradle.properties") {
+        entry(key: "VERSION_CODE", value: versionCode)
+        entry(key: "VERSION_NAME", value: versionName)
+    }
 }

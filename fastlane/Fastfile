@@ -1,6 +1,7 @@
 default_platform(:android)
 
 platform :android do
+
   	desc "Rodar todos os testes"
 	lane :test do
 		gradle(task: "test")
@@ -8,7 +9,7 @@ platform :android do
 	desc "Build do app e upload Google Play"
 	lane :build do
 		begin
-					gradle(task: "assemble", build_type: "Release")
+		gradle(task: "assemble", build_type: "Release")
 		upload_to_play_store(track: "beta",
 			apk: "/Users/thiagotadeuneves/Documents/Cursos/CursoFastlane/app/build/outputs/apk/release/app-release.apk")
 		slack(
@@ -20,7 +21,15 @@ platform :android do
 			send_error(e)
 		end
 	end
+	desc "Increment build version"
+	lane :increment do |options|
+		gradle(task: "-PversionCode=#{options[:versionCode]} -PversionName=#{options[:versionName]} incrementBuildVersion")
+		gradle(task: "build")
+	end
 end
+
+
+
 def send_error(e)
 	slack(
 		message: "Aplicativo NÃO Atualizado, Exception : #{e}",
