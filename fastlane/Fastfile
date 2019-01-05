@@ -10,10 +10,11 @@ platform :android do
 	lane :build do
 		begin
 		gradle(task: "assemble", build_type: "Release")
+		capture_android_screenshots
 		upload_to_play_store(track: "beta",
 			apk: "/Users/thiagotadeuneves/Documents/Cursos/CursoFastlane/app/build/outputs/apk/release/app-release.apk")
 		slack(
-			message: "Aplicativo Atualizado com sucess",
+			message: "Aplicativo Atualizado com sucesso",
 			channel: "#builds-appx",
 			success: true,
 			slack_url: "https://hooks.slack.com/services/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")
@@ -25,6 +26,20 @@ platform :android do
 	lane :increment do |options|
 		gradle(task: "-PversionCode=#{options[:versionCode]} -PversionName=#{options[:versionName]} incrementBuildVersion")
 		gradle(task: "build")
+	end
+	desc "Generate and upload to Play Store"
+	lane :screenshots do
+		begin
+			capture_android_screenshots
+			upload_to_play_store
+		slack(
+			message: "Screenshots Atualizados com sucesso",
+			channel: "#builds-appx",
+			success: true,
+			slack_url: "https://hooks.slack.com/services/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")
+		rescue Exception => e
+			send_error(e)
+		end
 	end
 end
 
